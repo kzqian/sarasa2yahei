@@ -22,7 +22,7 @@ jobs:
       - name: Get Local Tag
         id: get_local_tag
         run: |
-          LOCAL_LATEST_TAG=$(curl -s https://api.github.com/repos/kevin-live/sarasa2yahei/releases/latest | jq -r '.tag_name')
+          LOCAL_LATEST_TAG=$(curl -s https://api.github.com/repos/${GITHUB_REPOSITORY}/releases/latest | jq -r '.tag_name')
           echo "tag=$LOCAL_LATEST_TAG" >> "$GITHUB_OUTPUT"
           echo $LOCAL_LATEST_TAG
 
